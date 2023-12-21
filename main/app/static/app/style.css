@@ -1,0 +1,23 @@
+body{
+    display:flex;
+    justify-content:center;
+    position:relative;
+
+    background-color:aliceblue;
+}
+
+nav{
+    position:fixed;
+    top:15px;
+    left:20px;
+}
+img{
+    width:200px;
+}
+.main_box{
+      width: 900px;
+
+      padding:20px;
+      border:2px solid LightSeaGreen;
+      border-radius:10px;
+}

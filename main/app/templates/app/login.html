@@ -1,0 +1,18 @@
+
+{% extends 'app/base.html' %}
+
+{% block nav %}
+    <a href="{% url 'index' %}"><p>Главная</p></a>
+    <a href="{% url 'create_offer' %}"><p>Создать объявление</p></a>
+    <a href="{% url 'login' %}"><p>Авторизоваться</p></a>
+    <a href="{% url 'logout' %}"><p>Выйти</p></a>
+{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Войти">
+    </form>
+
+{% endblock %}

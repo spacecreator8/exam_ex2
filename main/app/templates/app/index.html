@@ -1,0 +1,25 @@
+
+{% extends 'app/base.html' %}
+
+{% block nav %}
+    {% if request.user.is_authenticated %}
+        <h2>{{ request.user.username }}</h2>
+    {% endif %}
+    <a href="{% url 'index' %}"><p>Главная</p></a>
+    <a href="{% url 'create_offer' %}"><p>Создать объявление</p></a>
+    <a href="{% url 'login' %}"><p>Авторизоваться</p></a>
+    <a href="{% url 'logout' %}"><p>Выйти</p></a>
+{% endblock %}
+
+{% block content %}
+    {% for i in queryset %}
+        <h2>{{ i.user }}</h2>
+        <p>{{ i.name }}</p>
+        <p>{{ i.description }}</p>
+        <img src="{{ i.photo.url }}" alt="foto">
+        <p>{{ i.email }}</p>
+        <p>{{ i.phone }}</p>
+        <hr>
+    {% endfor %}
+
+{% endblock %}
